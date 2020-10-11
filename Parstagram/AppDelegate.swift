@@ -6,15 +6,34 @@
 //  Copyright © 2020 jsejas. All rights reserved.
 //
 
+import Parse
 import UIKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let parseConfig = ParseClientConfiguration {
+                $0.applicationId = "lW0pqnXgQSSFm87CZS4ZdjjEk08H6JIFMWAYLi8g"
+                $0.clientKey = "zRlQqWYPMXXda0PSv6geZS172fruW8dkBS9LLOuh"
+                $0.server = "https://parseapi.back4app.com"
+        }
+        Parse.initialize(with: parseConfig)
+        
+      //  if PFUser.current() != nil{
+     //       let main = UIStoryboard(name: "Main", bundle: nil)
+      //      let feedNavigationController = main.instantiateViewController(withIdentifier: "FeedNavigationController")
+            
+     //   window?.rootViewController = feedNavigationController
+            
+      //  }
+        
+        
         return true
     }
 
@@ -32,6 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    
+    
+    
 }
 
